@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一卷清风 · 西南交通大学 馆藏里的廉洁基因</title>
+<meta name="description" content="以廉洁为魂，以AI为笔，以书香为墨。一卷可以展开的廉洁长卷。">
+<style>
+:root{
+  --paper:#f4ecd8; --paper2:#ece1c6; --ink:#1d1a17; --ink2:#4a4239;
+  --red:#b3261e; --jade:#3d5a4c; --gold:#a6803a; --line:rgba(29,26,23,.18);
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--serif);color:var(--ink);line-height:1.9;background:var(--paper);
+  background-image:
+    radial-gradient(ellipse at 20% 0%,rgba(166,128,58,.10),transparent 55%),
+    radial-gradient(ellipse at 90% 100%,rgba(61,90,76,.10),transparent 50%);
+}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:110px 0;position:relative}
+.seal{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:2.4em;height:2.4em;background:var(--red);color:#f8e9e0;
+  font-size:1rem;letter-spacing:0;border-radius:3px;transform:rotate(-4deg);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.25);
+}
+.chapter-tag{display:flex;align-items:center;gap:14px;color:var(--red);letter-spacing:.3em;font-size:.95rem;margin-bottom:14px}
+.chapter-tag::after{content:"";flex:0 0 80px;height:1px;background:var(--red);opacity:.5}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;letter-spacing:.12em;margin-bottom:12px}
+.lead{color:var(--ink2);max-width:40em;margin-bottom:44px}
+.quote{border-left:3px solid var(--red);padding:6px 0 6px 20px;font-size:1.25rem;letter-spacing:.06em;margin:24px 0}
+.quote small{display:block;color:var(--ink2);font-size:.85rem;letter-spacing:.1em;margin-top:4px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}html{scroll-behavior:auto}}
+
+/* nav */
+.rail{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:14px}
+.rail a{display:flex;align-items:center;justify-content:flex-end;gap:10px;text-decoration:none;font-size:.85rem;color:var(--ink2);letter-spacing:.15em}
+.rail a i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink2);background:transparent;transition:.3s}
+.rail a span{opacity:0;transform:translateX(6px);transition:.3s}
+.rail a:hover span,.rail a.on span{opacity:1;transform:none}
+.rail a.on i{background:var(--red);border-color:var(--red)}
+@media(max-width:900px){.rail{display:none}}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:60px 0}
+.hero .wrap{display:flex;align-items:center;justify-content:center;gap:clamp(20px,6vw,80px);width:100%}
+.title{writing-mode:vertical-rl;font-size:clamp(2.6rem,min(12vw,13vh),9rem);font-weight:900;letter-spacing:.18em;line-height:1.1;
+  background:linear-gradient(180deg,#1d1a17 30%,#4a4239);-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:ink 2.2s ease both}
+@keyframes ink{from{opacity:0;filter:blur(14px);letter-spacing:.5em}to{opacity:1;filter:none;letter-spacing:.18em}}
+.sub{writing-mode:vertical-rl;font-size:clamp(1rem,2vw,1.35rem);letter-spacing:.35em;color:var(--ink2);line-height:2.2;animation:ink 2.6s .5s ease both}
+.sub b{color:var(--red);font-weight:700}
+.hero .seal{position:absolute;left:50%;bottom:90px;transform:translateX(-50%) rotate(-4deg);font-size:1.4rem}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:.8rem;letter-spacing:.4em;color:var(--ink2);animation:bob 2.4s infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+.bamboo{position:absolute;right:-10px;bottom:0;height:88%;width:auto;opacity:.9;pointer-events:none}
+.bamboo .sway{transform-origin:50% 100%;animation:sway 7s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(1.6deg)}}
+@media(max-width:700px){.bamboo{opacity:.35}.hero .seal{bottom:70px}}
+
+/* preface */
+.preface{background:var(--paper2);text-align:center}
+.preface p{max-width:34em;margin:0 auto 1.2em;font-size:1.15rem}
+.preface .big{font-size:clamp(1.4rem,3vw,2rem);letter-spacing:.12em;margin-bottom:1.2em}
+
+/* tabs & cards */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.tabs button{font:inherit;letter-spacing:.2em;padding:8px 22px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:.25s}
+.tabs button.on,.tabs button:hover{background:var(--ink);color:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:rgba(255,255,255,.45);border:1px solid var(--line);padding:26px 24px;position:relative;transition:.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(29,26,23,.5)}
+.card h3{font-size:1.15rem;letter-spacing:.12em;margin-bottom:6px}
+.card .src{color:var(--red);font-size:.82rem;letter-spacing:.14em;margin-bottom:10px}
+.card p{font-size:.95rem;color:var(--ink2)}
+.card .k{font-size:1.1rem;color:var(--ink);margin:8px 0 10px;letter-spacing:.05em}
+
+/* campus */
+.slot{margin-top:14px;padding:8px 10px;border:1px dashed var(--gold);color:var(--gold);font-size:.8rem;letter-spacing:.06em}
+
+.slot{border-style:solid;border-color:var(--line);color:var(--ink2)}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-bottom:44px;border-top:2px solid var(--ink)}
+.timeline div{padding:18px 16px 18px 0;position:relative}
+.timeline div::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline b{display:block;color:var(--red);font-size:1.4rem;letter-spacing:.1em;margin-top:8px}
+.timeline span{font-size:.9rem;color:var(--ink2);display:block;line-height:1.7}
+.story{margin-top:50px;padding:36px clamp(22px,4vw,48px);background:var(--paper2);border:1px solid var(--line)}
+.story h3{font-size:1.5rem;letter-spacing:.14em;margin-bottom:14px}
+.story p{margin-bottom:10px;color:var(--ink2)}
+/* letters */
+.letters{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:50px}
+.env{cursor:pointer;background:linear-gradient(160deg,#f0e2c0,#e3d3a8);border:1px solid rgba(166,128,58,.5);padding:34px 20px 24px;text-align:center;position:relative;transition:.3s;font:inherit;color:inherit}
+.env::before{content:"";position:absolute;left:0;right:0;top:0;height:46%;background:rgba(166,128,58,.16);clip-path:polygon(0 0,100% 0,50% 100%)}
+.env:hover{transform:translateY(-5px) rotate(-.6deg)}
+.env b{display:block;position:relative;font-size:1.1rem;letter-spacing:.2em;margin-top:22px}
+.env em{position:relative;font-style:normal;font-size:.85rem;color:var(--ink2)}
+.paper{display:none;background:#fbf5e4;border:1px solid var(--line);padding:38px clamp(22px,5vw,56px);margin-bottom:50px;box-shadow:0 20px 40px -26px rgba(0,0,0,.5);position:relative}
+.paper.open{display:block;animation:unfold .6s ease}
+@keyframes unfold{from{opacity:0;transform:scaleY(.6);transform-origin:top}to{opacity:1;transform:none}}
+.paper h3{letter-spacing:.2em;margin-bottom:12px}
+.paper .txt{font-size:1.2rem;letter-spacing:.06em;margin-bottom:12px}
+.paper .gloss{color:var(--ink2);font-size:.95rem}
+.paper .x{position:absolute;right:16px;top:10px;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--ink2)}
+.write{background:var(--paper2);padding:34px clamp(20px,4vw,44px);border:1px solid var(--line)}
+.write h3{letter-spacing:.2em;margin-bottom:6px}
+.write p{color:var(--ink2);font-size:.92rem;margin-bottom:16px}
+.write input,.write textarea{width:100%;font:inherit;padding:10px 14px;margin-bottom:12px;border:1px solid var(--ink2);background:#fbf5e4;color:var(--ink)}
+.write textarea{min-height:90px;resize:vertical}
+.btn{font:inherit;letter-spacing:.3em;padding:10px 30px;background:var(--red);color:#fff;border:0;cursor:pointer;transition:.25s}
+.btn:hover{background:#8f1d17}
+.out{display:none;margin-top:28px;padding:34px 30px;background:#fbf5e4;border:1px solid var(--line);position:relative}
+.out.show{display:block;animation:unfold .6s ease}
+.out .to{letter-spacing:.15em;margin-bottom:12px}
+.out .body{white-space:pre-wrap;font-size:1.1rem;letter-spacing:.05em;padding-left:2em}
+.out .from{text-align:right;margin-top:22px;letter-spacing:.15em}
+.out .seal{position:absolute;right:26px;bottom:24px;opacity:.9}
+.out .note{font-size:.78rem;color:var(--ink2);margin-top:14px;letter-spacing:.1em}
+
+/* quiz */
+.dark{background:#1d1a17;color:#efe6d0}
+.dark .lead,.dark .chapter-tag{color:#c9bd9f}
+.dark .chapter-tag{color:#e07a6f}.dark .chapter-tag::after{background:#e07a6f}
+.quiz{max-width:720px}
+.q{display:none}
+.q.on{display:block;animation:unfold .5s ease}
+.q .scene{font-size:1.15rem;margin-bottom:20px;padding:20px 22px;border:1px solid rgba(239,230,208,.25);background:rgba(255,255,255,.04)}
+.q .scene small{display:block;color:#e07a6f;letter-spacing:.3em;margin-bottom:6px}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:transparent;border:1px solid rgba(239,230,208,.35);padding:14px 18px;margin-bottom:12px;cursor:pointer;transition:.25s}
+.opt:hover:not([disabled]){background:rgba(239,230,208,.1)}
+.opt.good{border-color:#7fb69a;background:rgba(127,182,154,.15)}
+.opt.bad{border-color:#e07a6f;background:rgba(224,122,111,.15)}
+.fb{display:none;margin-top:14px;padding:14px 18px;border-left:3px solid #e07a6f;color:#e6dcc2;font-size:.95rem}
+.fb.show{display:block}
+.next{display:none;margin-top:16px}
+.next.show{display:inline-block}
+.meter{display:flex;gap:8px;margin-bottom:22px}
+.meter i{flex:1;height:5px;background:rgba(239,230,208,.2);transition:.4s}
+.meter i.ok{background:#7fb69a}.meter i.no{background:#e07a6f}
+.result{display:none;text-align:center;padding:30px 0}
+.result.show{display:block;animation:unfold .6s ease}
+.result .n{font-size:3.4rem;color:#e07a6f;letter-spacing:.1em}
+
+/* end */
+footer{background:var(--paper2);text-align:center;padding:90px 0 60px}
+footer .big{font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:.2em;margin-bottom:26px}
+footer .meta{max-width:40em;margin:24px auto 0;font-size:.85rem;color:var(--ink2);line-height:2}
+</style>
+</head>
+<body>
+
+<nav class="rail" aria-label="章节导航">
+  <a href="#top" data-k="top"><span>展卷</span><i></i></a>
+  <a href="#c1" data-k="c1"><span>卷一 · 自我革命</span><i></i></a>
+  <a href="#c2" data-k="c2"><span>卷二 · 典籍清风</span><i></i></a>
+  <a href="#c3" data-k="c3"><span>卷三 · 校园砚田</span><i></i></a>
+  <a href="#c4" data-k="c4"><span>卷四 · 家书传薪</span><i></i></a>
+  <a href="#c5" data-k="c5"><span>卷五 · 一念之间</span><i></i></a>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="bamboo" viewBox="0 0 220 700" aria-hidden="true">
+    <g class="sway" fill="none" stroke="#3d5a4c" stroke-linecap="round">
+      <path d="M120 700 C118 520 124 340 118 40" stroke-width="10"/>
+      <path d="M118 560h0M119 430h0M120 300h0M119 170h0" stroke-width="0"/>
+      <g stroke-width="3" stroke="#2b4237"><path d="M110 560h20M111 430h20M112 300h20M111 170h20M113 90h18"/></g>
+      <g fill="#3d5a4c" stroke="none" opacity=".85">
+        <path d="M122 430 C160 410 200 420 214 396 C190 440 150 448 122 436Z"/>
+        <path d="M118 300 C80 282 40 292 16 262 C50 312 90 316 118 306Z"/>
+        <path d="M120 170 C158 150 196 160 210 130 C186 178 150 184 120 176Z"/>
+        <path d="M117 560 C86 546 56 552 34 526 C64 566 92 570 117 566Z"/>
+      </g>
+    </g>
+  </svg>
+  <div class="wrap">
+    <p class="sub">以<b>廉洁</b>为魂　以<b>AI</b>为笔<br>以<b>书香</b>为墨</p>
+    <h1 class="title">一卷清风</h1>
+    <p class="sub">西南交通大学 · 馆藏里的廉洁基因<br>一场向书卷深处的巡礼</p>
+  </div>
+  <span class="seal">廉</span>
+  <span class="scroll-hint">徐徐展卷</span>
+</header>
+
+<section class="preface" id="preface">
+  <div class="wrap">
+    <p class="big rv">书之所藏，非止于字；<br>字之所载，可正衣冠。</p>
+    <p class="rv">从左传的“官邪”之戒，到家书里的一粥一饭；从红色年代的清贫本色，到今天校园里的每一份数据、每一次论文署名。<br>廉洁不是一句口号，而是一条写在书页深处、代代相传的脉络。</p>
+    <p class="rv">这是一卷可以展开的长卷。<br>愿你读罢，心里有一阵清风。</p>
+  </div>
+</section>
+
+<!-- 卷一 -->
+<section id="c1">
+  <div class="wrap">
+    <div class="chapter-tag rv">卷一</div>
+    <h2 class="rv">自我革命</h2>
+    <p class="lead rv">一个政党的清醒，在于敢于向自己动刀。新时代全面从严治党，回答的是“如何跳出治乱兴衰历史周期率”这一历史之问。</p>
+    <div class="quote rv">党找到了自我革命这一跳出治乱兴衰历史周期率的第二个答案，确保党永远不变质、不变色、不变味。<small>—— 习近平在中国共产党第二十次全国代表大会上的报告</small></div>
+    <div class="grid">
+      <div class="card rv"><div class="src">一 · 为何</div><h3>永远在路上</h3><p>反腐败斗争没有休止符。“赶考”远未结束，管党治党一刻不能松。</p></div>
+      <div class="card rv"><div class="src">二 · 何为</div><h3>刀刃向内</h3><p>不护短、不遮丑，勇于揭短亮丑、刮骨疗毒，让党的肌体始终保持健康。</p></div>
+      <div class="card rv"><div class="src">三 · 何解</div><h3>标本兼治</h3><p>不敢腐、不能腐、不想腐一体推进，把制度之笼与理想信念之堤一并筑牢。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 卷二 -->
+<section id="c2" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="chapter-tag rv">卷二</div>
+    <h2 class="rv">典籍清风</h2>
+    <p class="lead rv">翻开架上旧籍，廉洁的基因藏在三条血脉里：传统的、革命的、先进的。点选下方，看它们如何在今天被读出新意。</p>
+    <div class="tabs rv" id="tabs"></div>
+    <div class="grid" id="classics"></div>
+  </div>
+</section>
+
+<!-- 卷三 -->
+<section id="c3">
+  <div class="wrap">
+    <div class="chapter-tag rv">卷三</div>
+    <h2 class="rv">校园砚田</h2>
+    <p class="lead rv">西南交通大学的前身创办于 1896 年，一百多年来，从山海关、唐山到峨眉、成都，几度迁徙，不变的是“精勤求学，敦笃励志，果毅力行，忠恕任事”。翻开校史，廉洁不是外加的要求，而是这所学校做人、做学问、做工程的一贯底色。</p>
+
+    <div class="timeline rv" aria-label="校史脉络">
+      <div><b>1896</b><span>创办于天津，为北洋大学堂附设津榆铁路学堂</span></div>
+      <div><b>1905</b><span>迁至唐山，更名唐山路矿学堂</span></div>
+      <div><b>1916</b><span>教育部颁赠“竢实扬华”匾额</span></div>
+      <div><b>1930</b><span>确立校训：精勤求学，敦笃励志，果毅力行，忠恕任事</span></div>
+      <div><b>1937</b><span>茅以升主持建成钱塘江大桥，同年含泪炸桥</span></div>
+      <div><b>1964</b><span>内迁四川峨眉</span></div>
+      <div><b>1972</b><span>改名西南交通大学</span></div>
+      <div><b>1989</b><span>总校迁往成都</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="card rv"><div class="src">师德师风 · 校史“五老”</div><h3>为人师表</h3><p class="k">罗忠忱、伍镜湖、顾宜孙、黄寿恒、李斐英</p><p>罗忠忱是学校第一位中国教授，被学生尊为“宗师”；顾宜孙讲课对教学一丝不苟；黄寿恒因材施教，重视培养学生独立思考。他们没有豪言，只有一堂堂扎实的课，这正是师德最朴素的样子。</p><div class="slot">资料参考：西南交通大学档案馆（校史馆）“唐山扬华”</div></div>
+      <div class="card rv"><div class="src">科研诚信 · 校训“忠恕任事”</div><h3>数据如实</h3><p class="k">“果毅力行，忠恕任事。”</p><p>“忠”是对事业尽心，“恕”是对他人和后人负责。科研里的一个数据、一处署名、一条引用，都是对同行与后来者的交代，不容涂改。</p><div class="slot">校训于 1930 年确立</div></div>
+      <div class="card rv"><div class="src">学风建设 · 精勤治学</div><h3>要求严 重实践</h3><p class="k">“起点高、基础厚，要求严、重实践。”</p><p>学校的治学传统，历来以“严”著称。严，是对自己的要求：不抄、不代、不买卖；把每一次答卷、每一份作业都留给真实的自己。</p><div class="slot">资料参考：西南交通大学档案馆（校史馆）</div></div>
+      <div class="card rv"><div class="src">校史文化 · 竢实扬华</div><h3>育人兴国</h3><p class="k">“竢实扬华”</p><p>1916 年教育部颁赠的匾额。“竢实”即脚踏实地成才，“扬华”即为国争光、振兴中华。踏实两字，正是廉洁的另一种说法：不虚、不假、不投机。</p><div class="slot">资料参考：西南交通大学档案馆（校史馆）“唐山扬华”</div></div>
+    </div>
+
+    <div class="story rv">
+      <div class="chapter-tag">交大故事</div>
+      <h3>桥在人在，桥毁人志不毁</h3>
+      <p>茅以升，1916 年毕业于唐山工业专门学校（西南交通大学前身），后来主持设计并修建钱塘江大桥，打破了外国人垄断中国大桥设计的局面。大桥全长 1453 米，基础深达 47.8 米，是双层公路铁路两用桥。</p>
+      <p>1937 年 12 月 23 日，为阻止日军南下，他亲自参与了炸桥。他在江边写下：</p>
+      <div class="quote">斗地风云突变色，炸桥挥泪断通途。五行缺火真来火，不复原桥不丈夫。<small>—— 茅以升 · 1937 年冬（据西南交通大学“交大故事”）</small></div>
+      <p>抗战胜利后，他又受命修复大桥，1948 年 3 月修复通车。一座桥，一辈子的“忠恕任事”：造桥时对国家负责，毁桥时对民族负责，复桥时对承诺负责。这样的人，公私分明，才有“不复原桥不丈夫”的底气。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 卷四 -->
+<section id="c4" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="chapter-tag rv">卷四</div>
+    <h2 class="rv">家书传薪</h2>
+    <p class="lead rv">廉洁齐家，不在大道理，而在饭桌边的一句叮咛。点开信封，读一读古人写给后辈的话；再提笔，给自己的家人写一封。</p>
+    <div class="letters" id="letters"></div>
+    <div class="paper" id="paper">
+      <button class="x" aria-label="合上" id="closeP">×</button>
+      <h3 id="pT"></h3><p class="txt" id="pX"></p><p class="gloss" id="pG"></p>
+    </div>
+
+    <div class="write rv">
+      <h3>提笔 · 一封廉洁家书</h3>
+      <p>写下你想对家人说的一句话。可以是提醒，也可以是承诺。生成后可直接截图保存。</p>
+      <input id="to" maxlength="12" placeholder="写给谁（如：爸爸 / 妈妈 / 未来的孩子）">
+      <textarea id="msg" maxlength="120" placeholder="例：家里不必为我托人情、走后门。我靠自己的本事立身，也请你们放心。"></textarea>
+      <input id="from" maxlength="12" placeholder="署名（如：小明）">
+      <button class="btn" id="make">落笔</button>
+      <div class="out" id="out">
+        <div class="to" id="oTo"></div><div class="body" id="oBody"></div><div class="from" id="oFrom"></div>
+        <span class="seal">家风</span><div class="note">一封家书 · 一份清白 · <span id="oDate"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 卷五 -->
+<section id="c5" class="dark">
+  <div class="wrap">
+    <div class="chapter-tag rv">卷五</div>
+    <h2 class="rv">一念之间</h2>
+    <p class="lead rv">腐败往往不是一步跨过悬崖，而是从“小事”“人情”“不好意思”开始。三个校园里的日常场景，你会怎么选？</p>
+    <div class="quiz rv">
+      <div class="meter" id="meter"><i></i><i></i><i></i></div>
+      <div id="qs"></div>
+      <div class="result" id="result"><div class="n" id="rn"></div><p id="rt"></p><button class="btn" id="again" style="margin-top:18px">再走一遍</button></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="big rv">清风无言，自在人心。</p>
+    <span class="seal">廉</span>
+    <p class="meta rv">
+      西南交通大学 · 物理科学与技术学院<br>
+      创作者：何淇　·　学号：2026201038<br>
+      本作品由 AI 辅助创作：文案结构、页面设计与交互由 AI 协助完成，内容经人工审校。<br>
+      校史资料参考：西南交通大学档案馆（校史馆）、西南交通大学“交大故事”。
+    </p>
+  </div>
+</footer>
+
+<script>
+/* ---------- reveal & nav ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const links=[...document.querySelectorAll('.rail a')];
+const secs=['top','c1','c2','c3','c4','c5'].map(id=>document.getElementById(id));
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.dataset.k===e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>io2.observe(s));
+
+/* ---------- 卷二 典籍 ---------- */
+const classics={
+ '传统文化':[
+  {t:'《左传》',s:'桓公二年',k:'国家之败，由官邪也。',p:'两千多年前的一句断语：一个政权的衰败，往往始于官员的邪僻失守。今天读来，依然是从严治吏的注脚。'},
+  {t:'《论语》',s:'里仁',k:'君子喻于义，小人喻于利。',p:'义利之辨，是读书人的第一道关口。面对诱惑先问“该不该”，再问“值不值”。'},
+  {t:'林则徐 · 自勉联',s:'清代',k:'海纳百川，有容乃大；壁立千仞，无欲则刚。',p:'“无欲则刚”不是没有追求，而是不被私欲牵着走，立身才能像崖壁般挺直。'}
+ ],
+ '革命文化':[
+  {t:'方志敏 · 《清贫》',s:'1935 年狱中',k:'清贫，洁白，朴素的生活，正是我们革命者能够战胜许多困难的地方。',p:'方志敏在狱中写下《清贫》，把清贫与洁白视为革命者的精神底色，也是战胜困难的力量。'},
+  {t:'“三大纪律 八项注意”',s:'红军时期',k:'一切缴获要归公。',p:'从“不拿群众一针一线”到“缴获要归公”，严明的纪律，是队伍赢得人心的根本。'},
+  {t:'延安精神',s:'抗战时期',k:'艰苦奋斗，清正廉洁。',p:'窑洞里的清贫与理想，是一代人留给后来者最朴素的廉洁课。'}
+ ],
+ '先进文化':[
+  {t:'《为人民服务》',s:'1944 年',k:'为人民利益而死，就比泰山还重。',p:'张思德的故事告诉我们：权力来自人民，就应当用于人民，不谋一己私利。'},
+  {t:'焦裕禄精神',s:'兰考',k:'亲民爱民、艰苦奋斗、科学求实、迎难而上、无私奉献。',p:'一个县委书记的藤椅，被磨出一个洞。这个细节，让廉洁有了可以触摸的形状。'},
+  {t:'新时代 · 中央八项规定',s:'2012 年至今',k:'一枝一叶，见真章。',p:'从改进作风入手，抓小抓早，久久为功。“小节”里见大德。'}
+ ]
+};
+const tabs=document.getElementById('tabs'),box=document.getElementById('classics');
+function showTab(name){
+  [...tabs.children].forEach(b=>b.classList.toggle('on',b.textContent===name));
+  box.innerHTML=classics[name].map(c=>`<div class="card"><div class="src">${c.s}</div><h3>${c.t}</h3><p class="k">“${c.k.replace(/^“|”$/g,'')}”</p><p>${c.p}</p></div>`).join('');
+}
+Object.keys(classics).forEach(n=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>showTab(n);tabs.appendChild(b)});
+showTab('传统文化');
+
+/* ---------- 卷四 家书 ---------- */
+const letters=[
+ {t:'诸葛亮 · 《诫子书》',s:'三国',x:'夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。',g:'写给八岁的儿子。修身先静，养德在俭：欲望少一点，志向才看得清。'},
+ {t:'《朱子家训》',s:'清代传世',x:'一粥一饭，当思来处不易；半丝半缕，恒念物力维艰。',g:'把节俭落在每一餐每一衣里。今天不必刻意清苦，但要记得“来处不易”。'},
+ {t:'林则徐 · 家训',s:'清代',x:'子孙若如我，要钱做什么？贤而多财，则损其志；子孙不如我，要钱做什么？愚而多财，益增其过。',g:'相传为林则徐所言。给后人留德不留财，是最清醒的家风。'}
+];
+const L=document.getElementById('letters'),P=document.getElementById('paper');
+letters.forEach((l,i)=>{const b=document.createElement('button');b.className='env rv';b.innerHTML=`<b>${l.t}</b><em>${l.s}</em>`;b.onclick=()=>{document.getElementById('pT').textContent=l.t;document.getElementById('pX').textContent=l.x;document.getElementById('pG').textContent=l.g;P.classList.remove('open');void P.offsetWidth;P.classList.add('open');P.scrollIntoView({behavior:'smooth',block:'center'})};L.appendChild(b);io.observe(b)});
+document.getElementById('closeP').onclick=()=>P.classList.remove('open');
+document.getElementById('make').onclick=()=>{
+  const to=document.getElementById('to').value.trim()||'亲爱的家人',msg=document.getElementById('msg').value.trim(),fr=document.getElementById('from').value.trim()||'你的孩子';
+  if(!msg){document.getElementById('msg').focus();return}
+  document.getElementById('oTo').textContent=to+'：';
+  document.getElementById('oBody').textContent=msg;
+  document.getElementById('oFrom').textContent=fr+' 敬上';
+  const d=new Date();document.getElementById('oDate').textContent=`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+  const o=document.getElementById('out');o.classList.remove('show');void o.offsetWidth;o.classList.add('show');
+};
+
+/* ---------- 卷五 情景 ---------- */
+const scenes=[
+ {s:'情景一 · 师生之间',q:'导师生日将至，同门商量凑钱买一份贵重礼物。你会：',o:[
+   ['A. 大家都送，我不送显得不合群，跟着凑钱。',0,'“人人都送”恰恰是风气变坏的开端。师生关系应建立在学术与信任上，而非礼金。'],
+   ['B. 婉拒凑钱，提议写一封感谢信，或组织一次学术交流。',1,'守住了边界，也保住了这份师生情谊的纯粹。'],
+   ['C. 自己悄悄送，能得到更多关照。',0,'这是把“人情”当成了“筹码”。一旦开了口子，评价与推荐就难以清白。']]},
+ {s:'情景二 · 实验室里',q:'截稿在即，有一组数据明显偏离预期结论。你会：',o:[
+   ['A. 剔除这组数据，让曲线好看一点。',0,'选择性剔除属于学术不端。你抹去的，是别人日后复现时会踩到的坑。'],
+   ['B. 如实记录，说明异常原因，必要时补做实验。',1,'科研的信誉是靠一次次如实累积的。异常数据，往往是新发现的起点。'],
+   ['C. 参考别人论文里的数据补上。',0,'伪造、拼凑数据，一旦被发现，代价远大于推迟一次投稿。']]},
+ {s:'情景三 · 节日之间',q:'节日里，亲友寄来一箱土特产，箱底还压着一张购物卡。你会：',o:[
+   ['A. 先收下，回头再说。',0,'“先收下”很容易变成“一直收下”。'],
+   ['B. 及时退回，并礼貌说明：心意领了，规矩不能破。',1,'当场说清，不留余地，反而让人敬你三分。'],
+   ['C. 收下卡，但转手送给别人。',0,'这不是廉洁，只是把问题转移给了下一个人。']]}
+];
+const qs=document.getElementById('qs'),meter=[...document.querySelectorAll('#meter i')];
+let cur=0,score=0;
+function render(){
+  qs.innerHTML='';
+  scenes.forEach((sc,i)=>{
+    const d=document.createElement('div');d.className='q'+(i===cur?' on':'');
+    d.innerHTML=`<div class="scene"><small>${sc.s}</small>${sc.q}</div>`;
+    const fb=document.createElement('div');fb.className='fb';
+    const nx=document.createElement('button');nx.className='btn next';nx.textContent=i===scenes.length-1?'看结果':'下一题';
+    sc.o.forEach(([txt,good,why])=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=txt;
+      b.onclick=()=>{
+        d.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+        b.classList.add(good?'good':'bad');
+        if(!good){[...d.querySelectorAll('.opt')].forEach((x,k)=>{if(sc.o[k][1])x.classList.add('good')})}
+        meter[i].classList.add(good?'ok':'no');if(good)score++;
+        fb.textContent=why;fb.classList.add('show');nx.classList.add('show');
+      };d.appendChild(b);
+    });
+    nx.onclick=()=>{cur++;if(cur>=scenes.length)finish();else render()};
+    d.appendChild(fb);d.appendChild(nx);qs.appendChild(d);
+  });
+}
+function finish(){
+  qs.innerHTML='';const r=document.getElementById('result');
+  document.getElementById('rn').textContent=`${score} / ${scenes.length}`;
+  document.getElementById('rt').textContent=score===3?'三道底线，全部守住。清风在你袖间。':score>=1?'有些关口你差点松了手。记住：底线守在“第一次”。':'别慌，是时候把底线重新画一遍了。廉洁，从下一次选择开始。';
+  r.classList.add('show');
+}
+document.getElementById('again').onclick=()=>{cur=0;score=0;meter.forEach(m=>m.className='');document.getElementById('result').classList.remove('show');render()};
+render();
+</script>
+</body>
+</html>
